@@ -15,11 +15,15 @@ const perfil = reactive({
     linguagem: '',
     biografia: ''
 })
+
+function salvarPerfil(novoPerfil) {
+    Object.assign(perfil, novoPerfil)
+}
 </script>
 
 <template>
- <EditPerfil :perfil="perfil" @mostrarPerfil="perfil"/>
- <ResultPerfil :mostrarPerfil="perfil"/>
+ <EditPerfil @enviarAlteracoes="salvarPerfil"/>
+ <ResultPerfil :perfil="perfil"/>
 </template>
 
 <style scoped>

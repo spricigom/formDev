@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['mostrarPerfil'])
+defineProps(['perfil'])
 </script>
 
 <template>
