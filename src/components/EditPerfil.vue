@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 const emit = defineEmits(['enviarAlteracoes'])
 const estados = [{
     nome: 'Acre',
@@ -11,7 +11,7 @@ const estados = [{
 },
 {
     nome: 'Amapá',
-        sigla: 'AP'
+    sigla: 'AP'
 },
 {
     nome: 'Amazonas',
@@ -173,30 +173,149 @@ function enviarDados() {
 }
 </script>
 <template>
-    <form @submit.prevent="enviarDados">
-        <h1>Formulário</h1>
-        <label for="">Nome:</label>
-        <input type="text" v-model="perfil.nome" placeholder="Digite seu nome">
-        <label for="">Email:</label>
-        <input type="email" v-model="perfil.email" placeholder="Digite seu email">
-        <label for="">Senha:</label>
-        <input type="password" v-model="perfil.senha" placeholder="Digite sua senha">
-        <label for="">Confirmação de Senha:</label>
-        <input type="password" v-model="perfil.confirmSenha" placeholder="Digite sua senha">
-        <label for="">Data de Nascimento:</label>
-        <input type="date" v-model="perfil.nascimento" placeholder="Data de Nascimento">
-        <label for="">Selecione seu Estado:</label>
-        <select name="estados" id="estados" v-model.lazy="estados.sigla">
-            <option v-for="(item, index) in estados" :value="item" :key="index"> {{ item }}</option>
-        </select>
-        <label for="">Endereço:</label>
-        <input type="text" v-model="perfil.endereco" placeholder="Digite seu endereco">
-        <label for="">Hobbies:</label>
-        <input type="text" v-model="perfil.hobbies" placeholder="Digite seus hobbies">
-        <label for="">Linguagem de programação:</label>
-        <input type="text" v-model="perfil.linguagem" placeholder="Digite sua linguagem de programação">
-        <label for="">Biografia:</label>
-        <input type="text" v-model="perfil.biografia" placeholder="Digite sua biografia">
-        <button type="submit" id="botao" class="btn">Mostrar</button>
-    </form>
+    <h1>Formulário</h1>
+
+    <div class="container text-left">
+        <div class="row">
+            <div class="colLados">
+                Column
+            </div>
+            <div class="col">
+                <div class="formulario">
+                    <form @submit.prevent="enviarDados">
+
+                        <div class="campo">
+                            <label for="">Nome:</label>
+                            <div class="linha">
+                                <input type="text" v-model="perfil.nome" placeholder="Digite seu nome">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Email:</label>
+                            <div class="linha">
+                                <input type="email" v-model="perfil.email" placeholder="Digite seu email">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Senha:</label>
+                            <div class="linha">
+                                <input type="password" v-model="perfil.senha" placeholder="Digite sua senha">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Confirmação de Senha:</label>
+                            <div class="linha">
+                                <input type="password" v-model="perfil.confirmSenha" placeholder="Digite sua senha">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Data de Nascimento:</label>
+                            <div class="linha">
+                                <input type="date" v-model="perfil.nascimento" placeholder="Data de Nascimento">
+                            </div>
+                        </div>
+
+
+                        <div class="campo">
+                            <label for="">Selecione seu Estado:</label>
+                            <div class="linha">
+                                <select name="estados" id="estados" v-model.lazy="estados.sigla">
+                            <option v-for="(item, index) in estados" :value="item" :key="index"> {{ item }}</option>
+                        </select>                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Endereço:</label>
+                            <div class="linha">
+                                <input type="text" v-model="perfil.endereco" placeholder="Digite seu endereco">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Hobbies:</label>
+                            <div class="linha">
+                                <input type="text" v-model="perfil.hobbies" placeholder="Digite seus hobbies">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Linguagem de programação:</label>
+                            <div class="linha">
+                                <input type="text" v-model="perfil.linguagem" placeholder="Digite sua linguagem de programação">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Biografia:</label>
+                            <div class="linha">
+                                <input type="text" v-model="perfil.biografia" placeholder="Digite sua biografia">
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                      
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+                        <button type="submit" id="botao" class="btn">Mostrar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="colLados">
+                Column
+            </div>
+        </div>
+    </div>
+
 </template>
+
+
+
+
+
+
+<style scoped>
+.colLados {
+    width: 30%;
+    background-color: blue;
+}
+
+.col {
+    width: 40%;
+    
+}
+
+
+.linha {
+}
+
+.linha input {
+    width: 100%;
+}
+</style>
