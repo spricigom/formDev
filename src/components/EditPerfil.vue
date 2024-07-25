@@ -181,37 +181,37 @@ function enviarDados() {
 
 
     <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
 
 
     <div class="container text-left">
         <div class="row">
 
-            
+
             <div class="colLados text-center">
-                
+
             </div>
             <div class="col">
                 <div class="formulario">
                     <form @submit.prevent="enviarDados">
 
                         <div class="campo">
-                            <label for="" >Nome:</label>
+                            <label for="">Nome:</label>
                             <div class="linha">
                                 <input type="text" v-model="perfil.nome" placeholder="Digite seu nome">
                             </div>
@@ -250,8 +250,10 @@ function enviarDados() {
                             <label for="">Selecione seu Estado:</label>
                             <div class="linha">
                                 <select name="estados" id="estados" v-model.lazy="estados.sigla">
-                            <option v-for="(item, index) in estados" :value="item" :key="index"> {{ item }}</option>
-                        </select>                            </div>
+                                    <option v-for="(item, index) in estados" :value="item" :key="index"> {{ item }}
+                                    </option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="campo">
@@ -271,7 +273,8 @@ function enviarDados() {
                         <div class="campo">
                             <label for="">Linguagem de programação:</label>
                             <div class="linha">
-                                <input type="text" v-model="perfil.linguagem" placeholder="Digite sua linguagem de programação">
+                                <input type="text" v-model="perfil.linguagem"
+                                    placeholder="Digite sua linguagem de programação">
                             </div>
                         </div>
 
@@ -290,13 +293,13 @@ function enviarDados() {
 
 
 
-                      
 
 
 
 
 
-                        
+
+
 
 
 
@@ -314,7 +317,7 @@ function enviarDados() {
                 </div>
             </div>
             <div class="colLados text-center">
-                
+
             </div>
         </div>
     </div>
@@ -327,16 +330,14 @@ function enviarDados() {
 
 
 <style scoped>
-
-
 .colLados {
     width: 30%;
-     
+
 }
 
 .col {
     width: 40%;
-    
+
 }
 
 
@@ -345,11 +346,10 @@ function enviarDados() {
     margin-bottom: 15px;
 }
 
-.linha select, input{
+.linha select,
+input {
     width: 100%;
     height: 4vh;
     border-radius: 10px;
 }
-
-
 </style>
