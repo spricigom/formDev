@@ -175,17 +175,43 @@ function enviarDados() {
 <template>
     <h1>Formulário</h1>
 
+
+
+
+
+
+    <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
     <div class="container text-left">
         <div class="row">
-            <div class="colLados">
-                Column
+
+            
+            <div class="colLados text-center">
+                
             </div>
             <div class="col">
                 <div class="formulario">
                     <form @submit.prevent="enviarDados">
 
                         <div class="campo">
-                            <label for="">Nome:</label>
+                            <label for="" >Nome:</label>
                             <div class="linha">
                                 <input type="text" v-model="perfil.nome" placeholder="Digite seu nome">
                             </div>
@@ -283,12 +309,12 @@ function enviarDados() {
 
 
 
-                        <button type="submit" id="botao" class="btn">Mostrar</button>
+                        <button type="submit" id="botao" class="btn btn-primary">Mostrar</button>
                     </form>
                 </div>
             </div>
-            <div class="colLados">
-                Column
+            <div class="colLados text-center">
+                
             </div>
         </div>
     </div>
@@ -301,9 +327,11 @@ function enviarDados() {
 
 
 <style scoped>
+
+
 .colLados {
     width: 30%;
-    background-color: blue;
+     
 }
 
 .col {
@@ -312,10 +340,16 @@ function enviarDados() {
 }
 
 
-.linha {
+.campo {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.linha input {
+.linha select, input{
     width: 100%;
+    height: 4vh;
+    border-radius: 10px;
 }
+
+
 </style>
