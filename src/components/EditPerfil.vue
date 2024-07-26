@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 const emit = defineEmits(['enviarAlteracoes'])
 const estados = [{
     nome: 'Acre',
@@ -113,99 +113,83 @@ const perfil = reactive({
     senha: '',
     confirmSenha: '',
     nascimento: '',
+    estados: '',
+    cidade: '',
     endereco: '',
     hobbies: '',
-    linguagem: '',
+   linguagem:[],
     biografia: ''
 })
 
 function enviarDados() {
     let error = false
-    // if (perfil.nome == '') {
-    //     alert("Faltou o nome")
-    //     error = true
-    // }
-    // if (perfil.email == '') {
-    //     alert("Faltou o email")
-    //     error = true
-    // }
-    // if (perfil.senha == '') {
-    //     alert("Faltou a senha")
-    //     error = true
-    // }
-    // if (perfil.confirmSenha == '') {
-    //     alert("Faltou a confirmação de senha")
-    //     error = true
-    // }
-    // if (perfil.senha !== perfil.confirmSenha) {
-    //     alert("Senhas não conferem")
-    //     error = true
-    // }
-    // if (perfil.nascimento == '') {
-    //     alert("Faltou a data de nascimento")
-    //     error = true
-    // }
-    // if (perfil.endereco == '') {
-    //     alert("Faltou o endereço")
-    //     error = true
-    // }
-    // if (perfil.hobbies == '') {
-    //     alert("Faltou o hobbies")
-    //     error = true
-    // }
-    // if (perfil.linguagem == '') {
-    //     alert("Faltou a linguagem de programção")
-    //     error = true
-    // }
-    // if (perfil.biografia == '') {
-    //     alert("Faltou a sua biografia")
-    //     error = true
-    // }
-    // if (perfil.estado == '') {
-    //     alert("Faltou o estado")
-    //     error = true
-    // }
-    // validar
+    if (perfil.nome == '') {
+        alert("Faltou o nome")
+        error = true
+    }
+    if (perfil.email == '') {
+        alert("Faltou o email")
+        error = true
+    }
+    if (perfil.senha == '') {
+        alert("Faltou a senha")
+        error = true
+    }
+    if (perfil.confirmSenha == '') {
+        alert("Faltou a confirmação de senha")
+        error = true
+    }
+    if (perfil.senha !== perfil.confirmSenha) {
+        alert("Senhas não conferem")
+        error = true
+    }
+    if (perfil.nascimento == '') {
+        alert("Faltou a data de nascimento")
+        error = true
+    }
+    if (perfil.endereco == '') {
+        alert("Faltou o endereço")
+        error = true
+    }
+    if (perfil.cidade == '') {
+        alert("Faltou a cidade")
+        error = true
+    }
+    if (perfil.hobbies == '') {
+        alert("Faltou o hobbies")
+        error = true
+    }
+    //if (perfil.linguagem == '') {
+    //    alert("Faltou a linguagem de programção")
+    //    error = true
+    //  }
+    if (perfil.biografia == '') {
+         alert("Faltou a sua biografia")
+       error = true
+     }
+    if (perfil.estado == '') {
+        alert("Faltou o estado")
+        error = true
+    }
+    //validar
     if (!error) {
-        // mostrarResultado.value = !mostrarResultado.value
         emit('enviarAlteracoes', { ...perfil })
     }
 }
 </script>
 <template>
-
-
-
-
-
-
-
-
-
-
-
     <div class="text-left">
         <div class="row">
-
-
             <div class="colLados text-center">
-
             </div>
             <div class="col">
                 <div class="formulario">
-                   
                     <div class="text-center">
-                         <h1>Cadastre-se</h1>
-                         <p>responda a esse formulário para criar sua conta</p>
+                        <h1>Cadastre-se</h1>
+                        <p>Responda a esse formulário para criar sua conta</p>
                     </div>
-                   
                     <hr style="margin-left:-10px; margin-right: -10px;">
-
-
-
-
                     <form @submit.prevent="enviarDados">
-
                         <div class="campo">
                             <label for="">Nome:</label>
                             <div class="linha">
@@ -213,7 +197,6 @@ function enviarDados() {
                                     placeholder="Digite seu nome">
                             </div>
                         </div>
-
                         <div class="campo">
                             <label for="">Email:</label>
                             <div class="linha">
@@ -221,42 +204,29 @@ function enviarDados() {
                                     placeholder="Digite seu email">
                             </div>
                         </div>
-
-
-                      
-                      
-                      
                         <div class=" text-left">
                             <div class="row">
                                 <div class="col">
-                                    
-                        <div class="campoEsq">
-                            <label for="">Senha:</label>
-                            <div class="linha">
-                                <input type="password" class="form-control" v-model="perfil.senha"
-                                    placeholder="Digite sua senha">
-                            </div>
-                        </div>
+                                    <div class="campoEsq">
+                                        <label for="">Senha:</label>
+                                        <div class="linha">
+                                            <input type="password" class="form-control" v-model="perfil.senha"
+                                                placeholder="Digite sua senha">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col">
-                                     <div class="campoDir">
-                            <label for="">Confirmação de Senha:</label>
-                            <div class="linha">
-                                <input type="password" class="form-control" v-model="perfil.confirmSenha"
-                                    placeholder="Digite sua senha">
-                            </div>
-                        </div>
+                                    <div class="campoDir">
+                                        <label for="">Confirmação de Senha:</label>
+                                        <div class="linha">
+                                            <input type="password" class="form-control" v-model="perfil.confirmSenha"
+                                                placeholder="Digite sua senha">
+                                        </div>
+                                    </div>
                                 </div>
-                                
+
                             </div>
                         </div>
-
-
-
-
-
-                       
-
                         <div class="campo">
                             <label for="">Data de Nascimento:</label>
                             <div class="linha">
@@ -264,18 +234,24 @@ function enviarDados() {
                                     placeholder="Data de Nascimento">
                             </div>
                         </div>
-
-
                         <div class="campo">
                             <label for="">Selecione seu Estado:</label>
                             <div class="linha">
-                                <select name="estados" id="estados" class="form-control" v-model.lazy="estados.sigla">
-                                    <option v-for="(item, index) in estados" :value="item" :key="index"> {{ item }}
+                                <select :id="type" v-model="perfil.estados">
+                                    <option disabled value="Selecione um estado">Selecione um estado</option>
+                                    <option v-for="(estado, index) in estados" :key="index" :value="estado.sigla">
+                                        {{ estado.nome }}
                                     </option>
                                 </select>
                             </div>
                         </div>
-
+                        <div class="campo">
+                            <label for="">Cidade:</label>
+                            <div class="linha">
+                                <input type="text" class="form-control" v-model="perfil.cidade"
+                                    placeholder="Digite sua cidade">
+                            </div>
+                        </div>
                         <div class="campo">
                             <label for="">Endereço:</label>
                             <div class="linha">
@@ -283,23 +259,14 @@ function enviarDados() {
                                     placeholder="Digite seu endereco">
                             </div>
                         </div>
-
+                        
                         <div class="campo">
                             <label for="">Hobbies:</label>
                             <div class="linha">
                                 <input type="text" class="form-control" v-model="perfil.hobbies"
                                     placeholder="Digite seus hobbies">
                             </div>
-                        </div>
-
-                        <div class="campo">
-                            <label for="">Linguagem de programação:</label>
-                            <div class="linha">
-                                <input type="text" class="form-control" v-model="perfil.linguagem"
-                                    placeholder="Digite sua linguagem de programação">
-                            </div>
-                        </div>
-
+                        </div>  
                         <div class="campo">
                             <label for="">Biografia:</label>
                             <div class="linha">
@@ -307,35 +274,14 @@ function enviarDados() {
                                     placeholder="Digite sua biografia">
                             </div>
                         </div>
+                        <label for="linguagem">Linguagem de Programação</label>
+                        <input type="checkbox" v-model="perfil.linguagem" value="JavaScript" name="JavaScript">JavaScript
+                        <input type="checkbox" v-model="perfil.linguagem" value="C++" name="C++"> C++
+                        <input type="checkbox" v-model="perfil.linguagem" value="Java" name="Java"> Java
+                        <input type="checkbox" v-model="perfil.linguagem" value="PHP" name="PHP"> PHP
+                        <input type="checkbox" v-model="perfil.linguagem" value="Python" name="Python"> Python
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;"><h5>Mostrar</h5></button>
+                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;"><h5>Mostrar</h5></button>   
                     </form>
                 </div>
             </div>
@@ -354,7 +300,7 @@ function enviarDados() {
 
 <style scoped>
 .colLados {
-    width:27.5%;
+    width: 27.5%;
     background-color: rgb(70, 70, 255);
 
 
@@ -372,9 +318,11 @@ function enviarDados() {
     margin-left: 35px;
     margin-right: 35px;
 }
+
 .campoEsq {
     margin-left: 35px;
 }
+
 .campoDir {
     margin-right: 35px;
 }

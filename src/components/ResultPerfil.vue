@@ -3,6 +3,7 @@ defineProps(['perfil'])
 </script>
 
 <template>
+   
     <label for="">Nome:</label>
     <p>{{ perfil.nome }}</p>
     <label for="">Email:</label>
@@ -11,6 +12,10 @@ defineProps(['perfil'])
     <p>{{ perfil.senha }}</p>
     <label for="">Data de Nacimento:</label>
     <p>{{ perfil.nascimento }}</p>
+    <label for="">Estado:</label>
+    <p>{{ perfil.estados }}</p>
+    <label for="">Cidade:</label>
+    <p>{{ perfil.cidade }}</p>
     <label for="">Endereço:</label>
     <p>{{ perfil.endereco }}</p>
     <label for="">Hobbies:</label>
