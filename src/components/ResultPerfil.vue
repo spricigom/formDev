@@ -23,45 +23,118 @@ defineProps(['perfil'])
             <div class="colLados text-center">
             </div>
             <div class="col">
+
+                <div class="titulo text-center">
+                    <h1>Resultados</h1> 
+                    <p>Confira aqui os dados do seu cadastro</p>
+                    <hr style="margin-left:-10px; margin-right: -10px;">
+                   
+                </div>
                 <div class="campo">
-                            <label for="">Nome:</label>
-                            <div class="linha">
-                                <p>{{ perfil.nome }}</p>
-                            </div>
-                        </div>
 
-              
+                    <label for="">Nome:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.nome }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Email:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.email }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Senha:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.senha }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Data de Nacimento:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.nascimento }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Estado:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.estados }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Cidade:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.cidade }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Endereço:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.endereco }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Hobbies:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.hobbies }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Hobbies:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.hobbies }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Linguagem de Programação:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.linguagem }}</h3>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="">Biografia:</label>
+                    <div class="linha">
+                        <h3>{{ perfil.biografia }}</h3>
+                    </div>
+                </div>
 
 
-                <label for="">Email:</label>
-                <p>{{ perfil.email }}</p>
 
-                <label for="">Senha:</label>
-                <p>{{ perfil.senha }}</p>
 
-                <label for="">Data de Nacimento:</label>
-                <p>{{ perfil.nascimento }}</p>
 
-                <label for="">Estado:</label>
-                <p>{{ perfil.estados }}</p>
 
-                <label for="">Cidade:</label>
-                <p>{{ perfil.cidade }}</p>
 
-                <label for="">Endereço:</label>
-                <p>{{ perfil.endereco }}</p>
 
-                <label for="">Hobbies:</label>
-                <p>{{ perfil.hobbies }}</p>
 
-                <label for="">Linguagem de Programação:</label>
-                <p>{{ perfil.linguagem }}</p>
-                
-                <label for="">Biografia:</label>
-                <p>{{ perfil.biografia }}</p>
+
+
 
             </div>
             <div class="colLados text-center">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="cima text-center">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
 
             </div>
         </div>
@@ -80,6 +153,7 @@ defineProps(['perfil'])
 
 .col {
     width: 45%;
+    margin-bottom: 30px;
 }
 
 .cima {
@@ -88,9 +162,12 @@ defineProps(['perfil'])
 }
 
 .campo {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: 35px;
     margin-right: 35px;
+}
+.titulo{
+    margin-top: 50px;
 }
 </style>

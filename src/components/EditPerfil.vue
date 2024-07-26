@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 const emit = defineEmits(['enviarAlteracoes'])
 const estados = [{
     nome: 'Acre',
@@ -117,7 +117,7 @@ const perfil = reactive({
     cidade: '',
     endereco: '',
     hobbies: '',
-   linguagem:[],
+    linguagem: [],
     biografia: ''
 })
 
@@ -159,14 +159,14 @@ function enviarDados() {
         alert("Faltou o hobbies")
         error = true
     }
-    //if (perfil.linguagem == '') {
-    //    alert("Faltou a linguagem de programção")
-    //    error = true
-    //  }
+    if (perfil.linguagem == '') {
+        alert("Faltou a linguagem de programção")
+        error = true
+    }
     if (perfil.biografia == '') {
-         alert("Faltou a sua biografia")
-       error = true
-     }
+        alert("Faltou a sua biografia")
+        error = true
+    }
     if (perfil.estado == '') {
         alert("Faltou o estado")
         error = true
@@ -274,14 +274,14 @@ function enviarDados() {
                                     placeholder="Digite seu endereco">
                             </div>
                         </div>
-                        
+
                         <div class="campo">
                             <label for="">Hobbies:</label>
                             <div class="linha">
                                 <input type="text" class="form-control" v-model="perfil.hobbies"
                                     placeholder="Digite seus hobbies">
                             </div>
-                        </div>  
+                        </div>
                         <div class="campo">
                             <label for="">Biografia:</label>
                             <div class="linha">
@@ -289,14 +289,54 @@ function enviarDados() {
                                     placeholder="Digite sua biografia">
                             </div>
                         </div>
-                        <label for="linguagem">Linguagem de Programação</label>
-                        <input type="checkbox" v-model="perfil.linguagem" value="JavaScript" name="JavaScript">JavaScript
-                        <input type="checkbox" v-model="perfil.linguagem" value="C++" name="C++"> C++
-                        <input type="checkbox" v-model="perfil.linguagem" value="Java" name="Java"> Java
-                        <input type="checkbox" v-model="perfil.linguagem" value="PHP" name="PHP"> PHP
-                        <input type="checkbox" v-model="perfil.linguagem" value="Python" name="Python"> Python
 
-                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 40px; margin-right: 40px; margin-bottom: 50px; width:90% ;"><h5>Mostrar</h5></button>   
+                        <div class="campoSelect text-center" style=" margin-top: 20px; margin-bottom: 20px;">
+                            <label for="linguagem" style="margin-bottom: 10px;">Linguagem de Programação</label>
+                            <div class="linha">
+
+                                <div class="container text-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="checkbox" v-model="perfil.linguagem" value="JavaScript"
+                                                name="JavaScript">JavaScript
+                                        </div>
+                                        <div class="col">
+                                            <input type="checkbox" v-model="perfil.linguagem" value="C++" name="C++">
+                                            C++
+
+                                        </div>
+                                        <div class="col">
+                                            <input type="checkbox" v-model="perfil.linguagem" value="Java" name="Java">
+                                            Java
+
+                                        </div>
+                                        <div class="col">
+                                            <input type="checkbox" v-model="perfil.linguagem" value="Python"
+                                                name="Python"> Python
+
+                                        </div>
+
+                                        <div class="col">
+                                            <input type="checkbox" v-model="perfil.linguagem" value="php"
+                                                name="php"> PHP
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+                        <button type="submit" id="botao" class="btn btn-primary "
+                            style="margin-top: 25px; margin-left: 40px; margin-right: 40px; margin-bottom: 50px; width:90% ;">
+                            <h5>Mostrar</h5>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -314,12 +354,14 @@ function enviarDados() {
 
 
 <style scoped>
-h1{
+h1 {
     margin-top: 50px;
 }
-.formulario{
+
+.formulario {
     border-radius: 100px;
 }
+
 .colLados {
     width: 27.5%;
     background-color: rgb(70, 70, 255);
@@ -358,8 +400,10 @@ input {
     border: .1px solid;
 }
 
-.cima{
-    background-color: rgb(70, 70, 255) ;
+.cima {
+    background-color: rgb(70, 70, 255);
     height: 100px;
 }
+
+
 </style>
