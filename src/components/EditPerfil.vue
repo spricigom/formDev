@@ -173,33 +173,18 @@ function enviarDados() {
 }
 </script>
 <template>
-    <h1>Formulário</h1>
 
 
 
 
 
 
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 
 
 
-    <div class="container text-left">
+
+
+    <div class="text-left">
         <div class="row">
 
 
@@ -208,40 +193,75 @@ function enviarDados() {
             </div>
             <div class="col">
                 <div class="formulario">
+                   
+                    <div class="text-center">
+                         <h1>Cadastre-se</h1>
+                         <p>responda a esse formulário para criar sua conta</p>
+                    </div>
+                   
+                    <hr style="margin-left:-10px; margin-right: -10px;">
+
+
+
+
                     <form @submit.prevent="enviarDados">
 
                         <div class="campo">
                             <label for="">Nome:</label>
                             <div class="linha">
-                                <input type="text" v-model="perfil.nome" placeholder="Digite seu nome">
+                                <input type="text" class="form-control" v-model="perfil.nome"
+                                    placeholder="Digite seu nome">
                             </div>
                         </div>
 
                         <div class="campo">
                             <label for="">Email:</label>
                             <div class="linha">
-                                <input type="email" v-model="perfil.email" placeholder="Digite seu email">
+                                <input type="email" class="form-control" v-model="perfil.email"
+                                    placeholder="Digite seu email">
                             </div>
                         </div>
 
-                        <div class="campo">
+
+                      
+                      
+                      
+                        <div class=" text-left">
+                            <div class="row">
+                                <div class="col">
+                                    
+                        <div class="campoEsq">
                             <label for="">Senha:</label>
                             <div class="linha">
-                                <input type="password" v-model="perfil.senha" placeholder="Digite sua senha">
+                                <input type="password" class="form-control" v-model="perfil.senha"
+                                    placeholder="Digite sua senha">
+                            </div>
+                        </div>
+                                </div>
+                                <div class="col">
+                                     <div class="campoDir">
+                            <label for="">Confirmação de Senha:</label>
+                            <div class="linha">
+                                <input type="password" class="form-control" v-model="perfil.confirmSenha"
+                                    placeholder="Digite sua senha">
+                            </div>
+                        </div>
+                                </div>
+                                
                             </div>
                         </div>
 
-                        <div class="campo">
-                            <label for="">Confirmação de Senha:</label>
-                            <div class="linha">
-                                <input type="password" v-model="perfil.confirmSenha" placeholder="Digite sua senha">
-                            </div>
-                        </div>
+
+
+
+
+                       
 
                         <div class="campo">
                             <label for="">Data de Nascimento:</label>
                             <div class="linha">
-                                <input type="date" v-model="perfil.nascimento" placeholder="Data de Nascimento">
+                                <input type="date" class="form-control" v-model="perfil.nascimento"
+                                    placeholder="Data de Nascimento">
                             </div>
                         </div>
 
@@ -249,7 +269,7 @@ function enviarDados() {
                         <div class="campo">
                             <label for="">Selecione seu Estado:</label>
                             <div class="linha">
-                                <select name="estados" id="estados" v-model.lazy="estados.sigla">
+                                <select name="estados" id="estados" class="form-control" v-model.lazy="estados.sigla">
                                     <option v-for="(item, index) in estados" :value="item" :key="index"> {{ item }}
                                     </option>
                                 </select>
@@ -259,21 +279,23 @@ function enviarDados() {
                         <div class="campo">
                             <label for="">Endereço:</label>
                             <div class="linha">
-                                <input type="text" v-model="perfil.endereco" placeholder="Digite seu endereco">
+                                <input type="text" class="form-control" v-model="perfil.endereco"
+                                    placeholder="Digite seu endereco">
                             </div>
                         </div>
 
                         <div class="campo">
                             <label for="">Hobbies:</label>
                             <div class="linha">
-                                <input type="text" v-model="perfil.hobbies" placeholder="Digite seus hobbies">
+                                <input type="text" class="form-control" v-model="perfil.hobbies"
+                                    placeholder="Digite seus hobbies">
                             </div>
                         </div>
 
                         <div class="campo">
                             <label for="">Linguagem de programação:</label>
                             <div class="linha">
-                                <input type="text" v-model="perfil.linguagem"
+                                <input type="text" class="form-control" v-model="perfil.linguagem"
                                     placeholder="Digite sua linguagem de programação">
                             </div>
                         </div>
@@ -281,7 +303,8 @@ function enviarDados() {
                         <div class="campo">
                             <label for="">Biografia:</label>
                             <div class="linha">
-                                <input type="text" v-model="perfil.biografia" placeholder="Digite sua biografia">
+                                <input type="text" class="form-control" v-model="perfil.biografia"
+                                    placeholder="Digite sua biografia">
                             </div>
                         </div>
 
@@ -312,7 +335,7 @@ function enviarDados() {
 
 
 
-                        <button type="submit" id="botao" class="btn btn-primary">Mostrar</button>
+                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;"><h5>Mostrar</h5></button>
                     </form>
                 </div>
             </div>
@@ -331,25 +354,39 @@ function enviarDados() {
 
 <style scoped>
 .colLados {
-    width: 30%;
+    width:27.5%;
+    background-color: rgb(70, 70, 255);
+
 
 }
 
 .col {
-    width: 40%;
+    width: 45%;
 
 }
 
 
 .campo {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
+.campoEsq {
+    margin-left: 35px;
+}
+.campoDir {
+    margin-right: 35px;
+}
+
+
 
 .linha select,
 input {
     width: 100%;
-    height: 4vh;
-    border-radius: 10px;
+    height: 5vh;
+    border-radius: 7px;
+    background-color: rgb(231, 229, 229);
+    border: .1px solid;
 }
 </style>
