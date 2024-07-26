@@ -178,6 +178,21 @@ function enviarDados() {
 }
 </script>
 <template>
+    <div class="cima text-center">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+
+
     <div class="text-left">
         <div class="row">
             <div class="colLados text-center">
@@ -281,7 +296,7 @@ function enviarDados() {
                         <input type="checkbox" v-model="perfil.linguagem" value="PHP" name="PHP"> PHP
                         <input type="checkbox" v-model="perfil.linguagem" value="Python" name="Python"> Python
 
-                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;"><h5>Mostrar</h5></button>   
+                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 40px; margin-right: 40px; margin-bottom: 50px; width:90% ;"><h5>Mostrar</h5></button>   
                     </form>
                 </div>
             </div>
@@ -299,6 +314,12 @@ function enviarDados() {
 
 
 <style scoped>
+h1{
+    margin-top: 50px;
+}
+.formulario{
+    border-radius: 100px;
+}
 .colLados {
     width: 27.5%;
     background-color: rgb(70, 70, 255);
@@ -308,7 +329,6 @@ function enviarDados() {
 
 .col {
     width: 45%;
-
 }
 
 
@@ -336,5 +356,10 @@ input {
     border-radius: 7px;
     background-color: rgb(231, 229, 229);
     border: .1px solid;
+}
+
+.cima{
+    background-color: rgb(70, 70, 255) ;
+    height: 100px;
 }
 </style>
